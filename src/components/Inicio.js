@@ -12,6 +12,7 @@ const Inicio = ({ addToCart }) => {
         const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=20');
         const results = response.data.results;
 
+        
         const pokemonDetails = await Promise.all(
           results.map(async (pokemon) => {
             const res = await axios.get(pokemon.url);
@@ -49,5 +50,5 @@ const Inicio = ({ addToCart }) => {
     </div>
   );
 };
-
+  
 export default Inicio;
